@@ -7,26 +7,27 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  let who = ["The dog", "My grandma", "The mailman", "My bird"];
-  let action = ["ate", "peed", "crushed", "broke"];
-  let what = ["my homework", "my phone", "the car"];
+  let who = ["The dog", "My grandma", "The mailman", "My bird", "My Avenger"];
+  let action = ["ate", "peed", "crushed", "broke", "exploded"];
+  let what = ["my homework", "my phone", "the car", "the mall", "the class"];
   let when = [
     "before the class",
     "when I was sleeping",
     "while I was exercising",
     "during my lunch",
-    "while I was praying"
+    "while I was praying",
   ];
-  let excuse = document.querySelector("#excuse");
-  const getRandomInt = array => {
+  function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length);
-  };
-  excuse.innerHTML =
-    who[getRandomInt(who)] +
+  }
+  let randomExcuse =
+    who[getRandomIndex(who)] +
     " " +
-    action[getRandomInt(action)] +
+    action[getRandomIndex(action)] +
     " " +
-    what[getRandomInt(what)] +
+    what[getRandomIndex(what)] +
     " " +
-    when[getRandomInt(when)];
+    when[getRandomIndex(when)];
+  let excuseElement = document.querySelector("#excuse");
+  excuseElement.innerHTML = randomExcuse;
 };
